@@ -1,1 +1,1 @@
-pint ( Tocado por mi)
+pint ( ultimo tocado )

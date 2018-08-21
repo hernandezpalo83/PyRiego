@@ -1,0 +1,1 @@
+mensaje = 'HOLA MUNDO EN VARIABLE'

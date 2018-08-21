@@ -1,2 +1,5 @@
+
+import variables
+
 def f_holamundo():
-    print("Humedad")
+    print(variables.mensaje )

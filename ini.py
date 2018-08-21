@@ -4,6 +4,7 @@
 import os
 from holamundo import f_holamundo
 
+import variables
 def menu():
 	"""
 	Función que limpia la pantalla y muestra nuevamente el menu

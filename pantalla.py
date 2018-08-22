@@ -1,5 +1,7 @@
 from pyfirmata import Arduino, util, STRING_DATA
-board = Arduino('COM6')
+import variables
+
+board = Arduino( PUERTO )
 board.send_sysex( STRING_DATA, util.str_to_two_byte_iter('Hello!') )
 
 def msg( text ):

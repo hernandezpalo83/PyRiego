@@ -1,0 +1,23 @@
+Connecting to an Arduino
+To control an Arduino from a Python script on your Raspberry Pi, you must first import the Arduino and util classes from the pyfirmata module. Then, create an object using the USB address you found in the previous step
+
+  >>> from pyfirmata import Arduino, util
+  >>> board = Arduino('/dev/ttyUSB0')
+Controlling Arduino GPIO
+The Arduino's digital input and output ports can be controlled using the board.digital[] list. Calling write() can set the pin values high or low (1 and 0 respectively). The read() method returns the current value of the pin.
+
+>>> board.digital[2].write(1)
+>>> print board.digital[2].read()
+If you'd like to use a pin repeatedly, its cumbersome to keep referring to it as board.digital[2]. Instead, you can get a reference to a pin with the board.get_pin() function. To this function, you pass a string of the format "[a|d]:[pin#]:[i:o:p:s]". It is split by colons into three sections. The first section determines if the pin will be used in analog or digital mode. The second section is the number of the pin you would like to use. The third section selects the pin mode between input, output, pwm, and servo. The returned pin can be assigned to a variable and then later used to call read() and write() methods.
+
+  >>> pin2 = board.getpin('d:2:o')
+  >>> pin2.write(1)
+Controlling Analog Pins
+To read the value on an analog pin, you have to first turn on the analog value reporting on that pin. However, this continuously sends the analog value from the Arduino to the Raspberry Pi. If not continuously read, this will clog up the serial connection and prevent the rest of your script from running properly. To read the values, it is helpful to use an iterator thread.
+
+   >>> it = util.Iterator(board)
+   >>> it.start()
+   >>> board.analog[0].enable_reporting()
+   >>> board.analog[0].read()
+   >>> it.start()
+To turn off the reporting of analog values, call disable_reporting() on the pin object

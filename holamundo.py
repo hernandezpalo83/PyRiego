@@ -1,6 +1,13 @@
 
 import variables
+import time 
+from pyfirmata import Arduino
 
 
-def f_holamundo():
-    print( variables.mensaje + 'Prunba 1') 
+board = Arduino( PUERTO )
+
+dhile 2:
+        board.digital[13].write(1)
+        time.sleep(2)
+        board.digital[13].write(0)
+        time.sleep(1)

@@ -25,7 +25,8 @@ while True:
 	opcionMenu = input("inserta un numero valor >> ")
     
 	if opcionMenu=="1":
-		f_blik(True)        
+		print ("")
+		input("Has pulsado la opción 1...\npulsa una tecla para continuar")   
 	elif opcionMenu=="2":
 		print ("")
 		input("Has pulsado la opción 2...\npulsa una tecla para continuar")

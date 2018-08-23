@@ -6,7 +6,7 @@ from pyfirmata import Arduino
 
 board = Arduino( PUERTO )
 
-dhile 2:
+while 2:
         board.digital[13].write(1)
         time.sleep(2)
         board.digital[13].write(0)

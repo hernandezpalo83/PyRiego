@@ -9,7 +9,7 @@ def menu():
 	"""
 	Función que limpia la pantalla y muestra nuevamente el menu
 	"""
-	os.system('clear') # NOTA para windows tienes que cambiar clear por cls
+	os.system('cls') # NOTA para windows tienes que cambiar clear por cls
 	print ("Selecciona una opción")
 	print ("\t1 - Encender/Apagar")
 	print ("\t2 - Sin funcion")

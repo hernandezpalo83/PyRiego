@@ -18,6 +18,7 @@ def menu():
     
  
 while True:
+    print ("MENU")
 	# Mostramos el menu
 	menu()
  

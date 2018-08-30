@@ -2,16 +2,15 @@
 # -*- coding: utf-8 -*-
  
 import os
-from holamundo import f_holamundo
-from blik import f_blik
 import variables
+import holamundo
 def menu():
 	"""
 	Función que limpia la pantalla y muestra nuevamente el menu
 	"""
 	#os.system('cls') # NOTA para windows tienes que cambiar clear por cls
 	print ("Selecciona una opción")
-	print ("\t1 - Encender/Apagar")
+	print ("\t1 - Hola Mundo")
 	print ("\t2 - Sin funcion")
 	print ("\t3 - Sin funcion")
 	print ("\t9 - salir")
@@ -26,7 +25,8 @@ while True:
     
 	if opcionMenu=="1":
 		print ("")
-		input("Has pulsado la opción 1...\npulsa una tecla para continuar")   
+		input("Has pulsado la opción 1...\npulsa una tecla para continuar") 
+		holamundo  
 	elif opcionMenu=="2":
 		print ("")
 		input("Has pulsado la opción 2...\npulsa una tecla para continuar")
